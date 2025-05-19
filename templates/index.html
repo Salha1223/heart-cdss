@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>نموذج دعم قرار سريري</title>
+    <style>
+        body { font-family: Arial; background-color: #f9f9f9; padding: 20px; }
+        form { background: #fff; padding: 20px; border-radius: 10px; width: 400px; margin: auto; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        input, select { width: 100%; padding: 8px; margin: 8px 0; }
+        button { background: green; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer; width: 100%; }
+        .result { text-align: center; font-size: 18px; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <form method="post" action="/predict">
+        <h2>تقييم احتمالية مرض القلب</h2>
+        <input type="number" name="Age" placeholder="العمر" required>
+        <select name="Sex">
+            <option value="1">ذكر</option>
+            <option value="0">أنثى</option>
+        </select>
+        <select name="ChestPainType">
+            <option value="0">نوع 0</option>
+            <option value="1">نوع 1</option>
+            <option value="2">نوع 2</option>
+            <option value="3">نوع 3</option>
+        </select>
+        <input type="number" name="RestingBP" placeholder="الضغط الانبساطي">
+        <input type="number" name="Cholesterol" placeholder="الكوليسترول">
+        <select name="FastingBS">
+            <option value="1">نعم (>120)</option>
+            <option value="0">لا</option>
+        </select>
+        <select name="RestingECG">
+            <option value="0">طبيعي</option>
+            <option value="1">ST غير طبيعي</option>
+            <option value="2">أعراض تضخم البطين الأيسر</option>
+        </select>
+        <input type="number" name="MaxHR" placeholder="أقصى معدل نبض">
+        <select name="ExerciseAngina">
+            <option value="1">نعم</option>
+            <option value="0">لا</option>
+        </select>
+        <input type="number" name="Oldpeak" placeholder="ST depression">
+        <select name="ST_Slope">
+            <option value="0">Upsloping</option>
+            <option value="1">Flat</option>
+            <option value="2">Downsloping
