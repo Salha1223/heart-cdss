@@ -1,0 +1,33 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2708
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset178 GeezaPro;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh9000\viewkind0
+\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 from flask import Flask, request, render_template\
+import joblib\
+import numpy as np\
+\
+app = Flask(__name__)\
+model = joblib.load('random_forest_model.pkl')\
+\
+@app.route('/')\
+def home():\
+    return render_template('index.html')\
+\
+@app.route('/predict', methods=['POST'])\
+def predict():\
+    try:\
+        features = [float(request.form.get(f)) for f in [\
+            'Age', 'Sex', 'ChestPainType', 'RestingBP', 'Cholesterol',\
+            'FastingBS', 'RestingECG', 'MaxHR', 'ExerciseAngina',\
+            'Oldpeak', 'ST_Slope'\
+        ]]\
+        prediction = model.predict([np.array(features)])\
+        result = "\uc0\u55357 \u57000  \'ed\'e6\'cc\'cf \'c7\'cd\'ca\'e3\'c7\'e1 \'e1\'e3\'d1\'d6 \'c7\'e1\'de\'e1\'c8" if prediction[0] == 1 else "\u9989  \'e1\'c7 \'ed\'e6\'cc\'cf \'e3\'d1\'d6 \'de\'e1\'c8"\
+        recommendation = "\'ed\'e4\'d5\'cd \'c8\'ca\'cd\'e6\'ed\'e1 \'c7\'e1\'cd\'c7\'e1\'c9 \'e1\'e3\'d2\'ed\'cf \'e3\'e4 \'c7\'e1\'dd\'cd\'e6\'d5\'c7\'ca" if prediction[0] == 1 else "\'e1\'c7 \'cd\'c7\'cc\'c9 \'e1\'ca\'cf\'ce\'e1 \'c5\'d6\'c7\'dd\'ed \'cd\'c7\'e1\'ed\'c7\'f0"\
+        return render_template('index.html', prediction_text=result, recommendation_text=recommendation)\
+    except Exception as e:\
+        return f"\'ce\'d8\'c3 \'dd\'ed \'c7\'e1\'c5\'cf\'ce\'c7\'e1: \{e\}"\
+}
