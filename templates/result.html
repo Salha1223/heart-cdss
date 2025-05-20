@@ -1,9 +1,26 @@
 <!DOCTYPE html>
 <html>
-<head><title>النتيجة</title></head>
-<body style="text-align:center;">
-    <h2>النتيجة:</h2>
-    <h1>{{ result }}</h1>
-    <a href="/"><button>رجوع للرئيسية</button></a>
+<head>
+    <title>Prediction Result</title>
+</head>
+<body style="text-align:center; font-family:sans-serif;">
+    <h1>🔍 Prediction Result</h1>
+
+    {% if result %}
+        <h2>{{ result }}</h2>
+    {% else %}
+        <p>No prediction result available.</p>
+    {% endif %}
+
+    <br>
+    <a href="/"><button>Back to Home</button></a>
+    <br><br>
+
+    <footer>
+        <p style="margin-top: 50px;">
+            <strong>Heart Disease Prediction</strong><br>
+            Done by: Raghad Baidas & Salha AlOtaibi
+        </p>
+    </footer>
 </body>
 </html>
