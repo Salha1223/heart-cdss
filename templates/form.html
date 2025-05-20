@@ -1,25 +1,60 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>نموذج فحص القلب</title>
+    <title>Patient Information</title>
 </head>
 <body style="text-align:center; font-family:sans-serif;">
-    <h1>📝 أدخل معلومات المريض</h1>
+    <h1>📝 Enter Patient Information</h1>
     <form method="post">
-        العمر: <input type="number" name="age" required><br><br>
-        ضغط الدم: <input type="number" name="resting_bp" required><br><br>
-        الكوليسترول: <input type="number" name="cholesterol" required><br><br>
-        سكر صائم > 120؟ (1 = نعم, 0 = لا): <input type="number" name="fasting_bs" min="0" max="1" required><br><br>
-        الحد الأقصى لمعدل نبضات القلب: <input type="number" name="max_hr" required><br><br>
-        Oldpeak (انخفاض ST): <input type="number" step="any" name="oldpeak" required><br><br>
-        الجنس (M/F): <input type="text" name="sex" required><br><br>
-        نوع ألم الصدر (ATA / NAP / ASY / TA): <input type="text" name="cp" required><br><br>
-        تخطيط القلب (Normal / ST / LVH): <input type="text" name="resting_ecg" required><br><br>
-        ذبحة صدرية مجهدة (Y/N): <input type="text" name="exercise_angina" required><br><br>
-        ST Slope (Up / Flat / Down): <input type="text" name="st_slope" required><br><br>
-        <input type="submit" value="تشخيص">
+        Age: <input type="number" name="age" required><br>
+        <small>Patient age (between 20 and 80)</small><br><br>
+
+        Resting Blood Pressure: <input type="number" name="resting_bp" required><br>
+        <small>Blood pressure in mm Hg on hospital admission</small><br><br>
+
+        Cholesterol: <input type="number" name="cholesterol" required><br>
+        <small>Serum cholesterol in mg/dl</small><br><br>
+
+        Fasting Blood Sugar > 120 mg/dl (1 = Yes, 0 = No): <input type="number" name="fasting_bs" min="0" max="1" required><br>
+        <small>Is fasting blood sugar > 120 mg/dl? (1 = Yes, 0 = No)</small><br><br>
+
+        Max Heart Rate: <input type="number" name="max_hr" required><br>
+        <small>Maximum heart rate achieved during test</small><br><br>
+
+        Oldpeak (ST Depression): <input type="number" step="any" name="oldpeak" required><br>
+        <small>ST depression induced by exercise relative to rest</small><br><br>
+
+        Sex (M/F): <input type="text" name="sex" required><br>
+        <small>Gender: M = Male, F = Female</small><br><br>
+
+        Chest Pain Type (ATA / NAP / ASY / TA): <input type="text" name="cp" required><br>
+        <small>
+            ATA = Atypical Angina<br>
+            NAP = Non-Anginal Pain<br>
+            ASY = Asymptomatic<br>
+            TA = Typical Angina
+        </small><br><br>
+
+        Resting ECG (Normal / ST / LVH): <input type="text" name="resting_ecg" required><br>
+        <small>
+            Normal = Normal<br>
+            ST = Having ST-T wave abnormality<br>
+            LVH = Left Ventricular Hypertrophy
+        </small><br><br>
+
+        Exercise-Induced Angina (Y/N): <input type="text" name="exercise_angina" required><br>
+        <small>Y = Yes, N = No</small><br><br>
+
+        ST Slope (Up / Flat / Down): <input type="text" name="st_slope" required><br>
+        <small>
+            Up = Upsloping<br>
+            Flat = Flat<br>
+            Down = Downsloping
+        </small><br><br>
+
+        <input type="submit" value="Predict">
     </form>
     <br>
-    <a href="/"><button>رجوع للرئيسية</button></a>
+    <a href="/"><button>Back to Home</button></a>
 </body>
 </html>
