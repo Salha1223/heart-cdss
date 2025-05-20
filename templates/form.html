@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>نموذج فحص القلب</title>
+</head>
+<body style="text-align:center; font-family:sans-serif;">
+    <h1>📝 أدخل معلومات المريض</h1>
+    <form method="post">
+        العمر: <input type="number" name="age" required><br><br>
+        ضغط الدم: <input type="number" name="resting_bp" required><br><br>
+        الكوليسترول: <input type="number" name="cholesterol" required><br><br>
+        سكر صائم > 120؟ (1 = نعم, 0 = لا): <input type="number" name="fasting_bs" min="0" max="1" required><br><br>
+        الحد الأقصى لمعدل نبضات القلب: <input type="number" name="max_hr" required><br><br>
+        Oldpeak (انخفاض ST): <input type="number" step="any" name="oldpeak" required><br><br>
+        الجنس (M/F): <input type="text" name="sex" required><br><br>
+        نوع ألم الصدر (ATA / NAP / ASY / TA): <input type="text" name="cp" required><br><br>
+        تخطيط القلب (Normal / ST / LVH): <input type="text" name="resting_ecg" required><br><br>
+        ذبحة صدرية مجهدة (Y/N): <input type="text" name="exercise_angina" required><br><br>
+        ST Slope (Up / Flat / Down): <input type="text" name="st_slope" required><br><br>
+        <input type="submit" value="تشخيص">
+    </form>
+    <br>
+    <a href="/"><button>رجوع للرئيسية</button></a>
+</body>
+</html>
