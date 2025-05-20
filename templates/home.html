@@ -1,13 +1,56 @@
 <!DOCTYPE html>
 <html>
-<head><title>Welcome</title></head>
-<body style="text-align:center; font-family:sans-serif;">
-    <h1>💓 Welcome to Heart Disease Prediction App</h1>
-    <a href="/form"><button>Start Assessment</button></a>
-    <br><br><br>
-    <footer>
-        <p>Heart Disease Prediction</p>
-        <strong>Done by:<br>Raghad Baidas<br>Salha AlOtaibi</strong>
-    </footer>
+<head>
+    <title>Heart Disease Prediction</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #b18ce8, #e2ccf7);
+            font-family: 'Segoe UI', sans-serif;
+            text-align: center;
+            color: #333;
+        }
+        .container {
+            padding-top: 60px;
+        }
+        img.logo {
+            width: 220px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+        }
+        a button {
+            background-color: #7b4dd6;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        a button:hover {
+            background-color: #5f39ad;
+        }
+        footer {
+            margin-top: 60px;
+            font-size: 0.95rem;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img class="logo" src="{{ url_for('static', filename='cover.png') }}" alt="Heart AI Logo">
+        <h1>💓 Welcome to the Heart Disease Prediction App</h1>
+        <a href="/form"><button>Start Assessment</button></a>
+        <footer>
+            <p><strong>Done by:</strong><br>Raghad Baidas<br>Salha AlOtaibi</p>
+        </footer>
+    </div>
 </body>
 </html>
